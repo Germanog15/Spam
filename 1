@@ -1,0 +1,14 @@
+SELECT
+    *
+FROM
+    query_3540715
+WHERE
+    COALESCE(quote_casts_to_casts, 0) > 0.4
+    OR avatar_url IS NULL
+    OR (
+        COALESCE(followers_to_following, 0) < 0.25
+        AND COALESCE(following, 0) > 250
+    )
+ORDER BY
+    fid
+;
